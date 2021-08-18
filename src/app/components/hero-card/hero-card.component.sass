@@ -1,0 +1,104 @@
+$cardColor: #ffffff
+$buttonColor: #ec1e23
+$fontNameColor: #483c3c
+$fontDescripColor: #8f8383
+$relatedComicsColor: #776d6c
+
+@mixin tablet
+ @media only screen and (min-width: 768px)
+    @content
+
+#sectionsCard
+  display: flex
+  flex-direction: column
+  flex-wrap: wrap
+  padding: 1rem
+
+.CardHeroes
+  margin: 0 auto
+  background: $cardColor
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.377)
+  margin-bottom: 1rem
+  @include tablet
+    margin: 0 0 1rem 0
+    width: 49%
+    display: flex
+    flex-wrap: wrap
+
+#conteinerHeaderCard
+  display: flex
+  align-content: center
+  align-items: center
+
+#cardImagen
+  margin: auto
+  padding: 1rem
+  @include tablet
+    padding: 0
+    position: relative
+    width: 30%
+    margin: 0
+
+  img
+    width: 12rem
+    height: 12rem
+    border-radius: 100%
+    display: block
+    margin: auto
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.377)
+    @include tablet
+      width: 9rem
+      height: 9rem
+
+#conteinerTitleCard
+  margin: auto
+  text-align: center
+  @include tablet
+    font-size: small
+    text-align: left
+    width: 50%
+
+  h3
+    color: $fontNameColor
+    text-transform: uppercase
+
+  p
+    font-size: 0.9rem
+    text-align: justify
+    padding: 0 1rem 0 1rem
+    color: $fontDescripColor
+    @include tablet
+      font-size: xsmall
+      padding: 0
+
+  button
+    display: inline-block
+    margin: auto
+    background: $buttonColor
+    color: $cardColor
+    padding: 3px 6px
+    border: $buttonColor
+    text-align: center
+    text-decoration: none
+    line-height: 2
+
+#conteinerTitlelinksCard
+  width: 100%
+  padding: 0.5rem
+  font-size: 0.8rem
+  color: $relatedComicsColor
+
+.conteinerlinksCard
+  width: 100%
+  padding: 0.5rem
+  font-size: 0.8rem
+  color: $fontDescripColor
+  display: flex
+  flex-wrap: wrap
+
+  .linksCard
+    margin-bottom: 1rem
+    width: 50%
+
+    a
+      padding: 1rem 0 1rem 0
