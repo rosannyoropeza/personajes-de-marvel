@@ -1,0 +1,42 @@
+$fontNameColor: #483c3c
+$fontsColor: #ffffff
+$backgroundColor: #ec1e23
+$borderRadius: 1rem
+
+
+@mixin tablet
+ @media only screen and (min-width: 480px)   and (max-width: 768px)
+    @content
+
+@mixin destop
+  @media only screen and (min-width: 1024px)
+    @content
+
+.conteinerNotFound
+  background: $fontNameColor
+  width: 75%
+  border-radius: $borderRadius
+  padding: 3%
+  color: $fontsColor
+  margin: auto
+  margin-top: 10rem
+  @include tablet
+    width: 50%
+  @include destop
+    width: 25%
+
+  div
+    width: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-top: 3rem
+
+    a
+      text-decoration: none
+      color: $fontsColor
+      background-color: $backgroundColor
+      border-radius: $borderRadius
+      line-height: 3rem
+      padding: 1rem
+

@@ -1,0 +1,59 @@
+$headerColor: #2d2727
+$search: #fafafa
+$fontSearch: #b9b9b9
+
+@mixin tablet
+  @media only screen and (min-width: 768px) and (max-width: 1024px)
+    @content
+
+@mixin destop
+  @media only screen and (min-width: 1024px)
+    @content
+
+#containerHeader
+  background: $headerColor
+  display: flex
+  align-items: center
+  flex-direction: column
+  padding: 1rem
+  @include destop
+    flex-direction: inherit
+
+#conteinerLogo
+  align-items: center
+  padding: 1em
+
+#logo
+  width: 150px
+  height: 75px
+  @include tablet
+    width: 300px
+    height: auto
+  @include destop
+    width: 80px
+    height: 40px
+
+#conteinerSearch
+  width: 90%
+  background-color: #fafafa
+  display: flex
+  justify-content: space-evenly
+  border: 0.5rem solid #fafafa
+  margin: auto
+  @include destop
+    width: 50%
+    border: 0.1rem solid #fafafa
+
+  #searchText
+    appearance: none
+    background: transparent
+    margin-top: auto
+    margin-bottom: auto
+    border: none
+    font-size: 1rem
+    padding: 0.5rem
+    @include tablet
+      font-size: 2rem
+      width: 90%
+    @include destop
+      width: 90%

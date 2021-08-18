@@ -1,0 +1,22 @@
+$footerColor: #2d2727
+$fontsColor: #ffffff
+
+@mixin destop
+  @media only screen and (min-width: 768px)
+    @content
+
+footer
+  background-color: $footerColor
+  width: 100%
+  height: 50px
+  @include destop
+    display: inline-block
+
+  div
+    color: $fontsColor
+    display: flex
+    justify-content: center
+    @include destop
+      justify-content: inherit
+      margin-left: 15rem
+

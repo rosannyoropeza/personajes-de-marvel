@@ -1,0 +1,13 @@
+@mixin destop
+  @media only screen and (min-width: 1024px)
+    @content
+
+article
+  @include destop
+    float: left
+    width: 75%
+
+aside
+  @include destop
+    float: right
+    width: 25%

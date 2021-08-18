@@ -1,0 +1,78 @@
+$cardFilter: #feffff
+$fontFilter: #6d6767
+$borderFilter: #b4b4b4
+$fontsTitleHero: #3e3433
+
+@mixin tablet
+  @media only screen and (min-width: 768px) and (max-width: 1024px)
+    @content
+
+@mixin destop
+  @media only screen and (min-width: 1024px)
+    @content
+
+#sectionsCard
+  padding: 1rem
+  @include tablet
+    display:flex
+    flex-wrap: wrap
+
+.conthero
+  @include tablet
+    display: flex
+    justify-content: space-between
+    flex-flow: wrap
+  @include destop
+    display: flex
+    justify-content: space-between
+    flex-flow: wrap
+
+#heroes
+  display: flex
+  flex-direction: column
+  @include destop
+    flex-direction: initial
+    padding: 1rem
+
+#title
+  display: inline-flex
+  align-items: center
+  font-weight: 600
+  color: $fontsTitleHero
+  @include tablet
+    font-size: x-large
+  @include destop
+    font-size: x-large
+
+  h1
+    padding: 1rem
+
+  #imgTitle
+    @include tablet
+      width: 4rem
+
+    @include destop
+      width: 4rem
+
+#select
+  width: 90%
+  background-color: $cardFilter
+  border: 0.1rem solid $borderFilter
+  margin: auto
+  @include destop
+    width: 30%
+    margin-right: initial
+
+  select
+    position: relative
+    width: 95%
+    height: 55px
+    color: $fontFilter
+    margin: auto
+    padding: 10px 20px
+    border: none
+    background: $cardFilter
+    outline: none
+    font-size: 1rem
+    @include tablet
+      font-size: 1.9rem
