@@ -23,4 +23,9 @@ export class DataService {
   getCharacters():Observable<any> {
     return this.http.get("http://gateway.marvel.com/v1/public/characters",this.options);
   }
+
+  getComics(urlComics:string):Observable<any> {
+    return this.http.get(urlComics,this.options);
+  }
+
 }

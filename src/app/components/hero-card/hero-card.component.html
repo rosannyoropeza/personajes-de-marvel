@@ -16,8 +16,14 @@
     <div class= "conteinerlinksCard">
         <div class="linksCard" *ngFor="let comic of filterItems(character.comics.items); index as i">
           <div>
-            <a> {{comic.name}} </a>
+            <button class= "btnLinksCard" (click)="showModal(comic)"> {{comic.name}} </button>
           </div>
         </div>
     </div>
   </div>
+
+  <app-hero-modal
+  *ngIf="show"
+  (closeRequest)="closeModal()"
+  [dataComics]="dataComics">
+  </app-hero-modal>

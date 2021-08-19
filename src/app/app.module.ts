@@ -13,6 +13,8 @@ import { HeroListComponent } from './components/hero-list/hero-list.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HomeComponent } from './components/home/home.component';
+import { DataService } from './service/service';
+import { LocalStorageService } from './service/local-storage.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +33,7 @@ import { HomeComponent } from './components/home/home.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [DataService, LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

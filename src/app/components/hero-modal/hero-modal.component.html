@@ -1,0 +1,31 @@
+<section class="conteinerModal">
+  <div class="modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" (click)="closeModal()">
+            <img src="./assets/icons/btn-close.png"/>
+          </button>
+        </div>
+        <div class= "container-body">
+          <div class="imgModalBody">
+            <img class="imgItem" src='{{dataComics[0].thumbnail.path}}.{{dataComics[0].thumbnail.extension}}'/>
+          </div>
+          <div class="container-description">
+            <h2>{{dataComics[0].title}}</h2>
+            <P> {{dataComics[0].description}} </P>
+          </div>
+        </div>
+          <div class="modal-footer">
+            <button class="btnModal btn1" (click)="addFavorites(dataComics[0])">
+              <img src="./assets/icons/btn-favourites-default.png">
+              ADD TO FAVOURITES
+            </button>
+            <button class="btnModal btn2"><img src="./assets/icons/shopping-cart-primary.png">
+              BUY FOR {{dataComics[0].prices[0]. price | currency: "USD"}}
+            </button>
+          </div>
+      </div>
+    </div>
+  </div>
+  </section>

@@ -9,6 +9,9 @@ import { DataService } from 'src/app/service/service';
 })
 export class HeroCardComponent implements OnInit {
   characters:any;
+  show: boolean = false;
+  dataComics: Array<any>=[];
+
   constructor(private data:DataService) {}
 
   ngOnInit() {
@@ -19,8 +22,20 @@ export class HeroCardComponent implements OnInit {
     })
   }
 
- filterItems(items:Array<any>) {
-    return items.filter((item, index:number) => index < 4  )
- }
+  filterItems(items:Array<any>) {
+    return items.filter((item, index:number) => index < 4)
+  }
+
+  showModal(comic:any) {
+    this.data.getComics(comic.resourceURI).subscribe(resp=> {
+      console.log("Soy comics",resp.data.results)
+      this.dataComics = resp.data.results;
+      this.show = true;
+    });
+  }
+
+  closeModal() {
+    this.show = !this.show
+  }
 
 }
