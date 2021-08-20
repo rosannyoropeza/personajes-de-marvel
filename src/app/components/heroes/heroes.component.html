@@ -10,10 +10,10 @@
     </div>
 
     <div id= 'select'>
-      <select id='filtro'>
-        <option class='options'>
-          Sort by
-        </option>
+      <select id='filtro' (change)='changeSelectValue($event)'>
+        <option class='options'> Sort by </option>
+        <option class='options' value="ascendiente"> A-Z </option>
+        <option class='options' value="descendiente"> Z-A </option>
       </select>
     </div>
   </div>

@@ -40,14 +40,19 @@ export class DataService {
     return this.http.get(`${"http://gateway.marvel.com/v1/public/characters?nameStartsWith="}${text}&limit=10`,this.options);
   }
 
+  //PETICION PARA ORDENAR DE FORMAR ASCEDENTENTE A-Z
+  sortCharactersA(): Observable<any> {
+    return this.http.get("http://gateway.marvel.com/v1/public/characters?orderBy=name&limit=10",this.options);
+  }
+
+  //PETICION PARA ORDENAR DE FORMAR DESCENDENTE Z-A
+  sortCharactersZ(): Observable<any> {
+    return this.http.get("http://gateway.marvel.com/v1/public/characters?orderBy=-name&limit=10",this.options);
+  }
+
   //FUNCION PARA CREAR EL OBSERVABLE QUE SE PUEDE ACCEDER DESDE CUALQUIER COMPONENTE
   getComics$(): Observable<any> {
     return this.comics$.asObservable();
   }
 
-  //PETICION PARA ORDENAR DE FORMAR ASCEDENTENTE A-Z
-
-
-
-  //PETICION PARA ORDENAR DE FORMAR DESCENDENTE Z-A
 }
