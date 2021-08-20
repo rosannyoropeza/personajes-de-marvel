@@ -1,0 +1,27 @@
+<aside id="sectionList">
+  <div id='headerList'>
+    <div id="cardImagen">
+      <img src="/assets/icons/btn-favourites-primary.png" />
+    </div>
+    <div>
+      <h1><span>My Favourites</span></h1>
+    </div>
+  </div>
+  <div class="conteinerList">
+    <section class="listaBanner">
+      <article class="banner" *ngFor="let comic of comics">
+        <button type="button" class="btn-delete" (click)="deleteComics(comic)">
+          <img src="/assets/icons/btn-delete.png" />
+        </button>
+        <img
+          class="bannerImg"
+          src="{{comic.imgComics}}"
+        />
+        <h1 class="titleBanner">
+          {{comic.titleComics}}
+        </h1>
+      </article>
+    </section>
+  </div>
+
+</aside>

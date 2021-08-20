@@ -14,7 +14,10 @@
     <div class= "conteinerlinksCard">
         <div class="linksCard" *ngFor="let comic of filterItems(character.comics.items); index as i">
           <div>
-            <button class= "btnLinksCard" (click)="showModal(comic)"> {{comic.name}} </button>
+            <button class= "btnLinksCard" (click)="showModal(comic)">
+              <img class="imgBtnLinks" src="./assets/icons/link-arrow.png">
+              {{comic.name}}
+            </button>
           </div>
         </div>
     </div>

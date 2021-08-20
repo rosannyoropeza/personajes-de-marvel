@@ -22,8 +22,8 @@ export class LocalStorageService {
 
   //FUNCION PARA AGREGAR LOS COMICS FAVORITOS AL LOCALSTORAGE
  addComics(comic: Comics){
-    this.arrayComics.push(comic);
-    let comics: Array<Comics>=[];
+  this.arrayComics.push(comic);
+  let comics: Array<Comics>=[];
    if( typeof localStorage.getItem('comics') === 'string' ){
     comics= Object.values(JSON.parse(localStorage.getItem('comics') || '{}'));
     comics.push(comic);

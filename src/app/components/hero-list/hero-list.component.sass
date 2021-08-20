@@ -1,0 +1,81 @@
+$listHeroColor: #ebebeb
+$titleListHeroColor: #2d2727
+
+@mixin tablet
+  @media only screen and (min-width: 480px) and (max-width: 768px)
+    @content
+
+@mixin destop
+  @media only screen and (min-width: 1024px)
+    @content
+
+#sectionList
+  background: $listHeroColor
+  padding: 1rem
+
+#headerList
+    display: inline-flex
+    align-items: center
+    font-weight: 600
+
+    h1
+      padding: 1rem
+
+.conteinerList
+  width: 100%
+  display: flex
+  box-sizing: border-box
+  justify-content: center
+  padding: 0
+  overflow: hidden
+  @include destop
+    width: 80%
+    margin: auto
+
+.listaBanner
+  width: 100%
+  height: 50%
+  box-sizing: border-box
+  justify-content: center
+  padding: 0
+  overflow: hidden
+  @include tablet
+    display: flex
+    flex-wrap: wrap
+
+.banner
+  text-decoration: none
+  display: block
+  position: relative
+  @include tablet
+    padding: 1rem 1rem 0 1rem
+    width: 45%
+
+.bannerImg
+  width: 90%
+  padding: 1rem 1rem 0rem 1rem
+
+.titleBanner
+  font-size: 0.9375rem
+  letter-spacing: normal
+  line-height: 1
+  color: $titleListHeroColor
+  font-weight: 1300
+  text-align: center
+  display: block
+  margin-top: 0.625rem
+  width: 90%
+  padding: 0rem 1rem 1rem 1rem
+
+.titlesection
+  text-decoration: none
+
+.btn-delete
+  position: absolute
+  margin-left: 89%
+  background: transparent
+  border: none
+  @include tablet
+    margin-left: 80%
+  @include destop
+    margin-left: 85%
