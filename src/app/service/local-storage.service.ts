@@ -10,16 +10,17 @@ export class LocalStorageService {
   constructor() {
   }
 
+  //FUNCION PARA OBTENER LOS COMICS FAVORITOS DE LOCALSTORAGE
   getComicsLocalStorage(){
      let objt={};
     if(typeof localStorage.getItem('comics') === 'string' ){
-      console.log(2)
       objt= JSON.parse(localStorage.getItem('comics') || '{}');
       this.arrayComics=Object.values(objt);
     }
     return this.arrayComics;
   }
 
+  //FUNCION PARA AGREGAR LOS COMICS FAVORITOS AL LOCALSTORAGE
  addComics(comic: Comics){
     this.arrayComics.push(comic);
     let comics: Array<Comics>=[];
@@ -34,6 +35,7 @@ export class LocalStorageService {
    }
  }
 
+ //FUNCION PARA ELIMINAR LOS COMICS FAVORITOS DEL LOCALSTORAGE
  deleteComics(comic:Comics){
   for(let i=0; i< this.arrayComics.length; i++){
     if(comic== this.arrayComics[i]){

@@ -4,9 +4,11 @@
     <img id='logo' src='/assets/icons/Marvel_Logo.svg.png'>
   </div>
 
-  <div id="conteinerSearch">
-    <input type="search" id="searchText" placeholder="Seach character..." autocomplete= "off">
-    <input type="image" id="searchImg" src="/assets/icons/search.png">
-  </div>
+  <form id="conteinerSearch" [formGroup]="searchForm" (ngSubmit)="search()">
+    <input type="search" id="searchText" spellcheck="false" autocomplete="none"  placeholder="Seach character..." autocomplete= "off"  formControlName="search">
+    <button type="submit" id="searchImg">
+      <img src="/assets/icons/search.png">
+    </button>
+  </form>
 </header>
 

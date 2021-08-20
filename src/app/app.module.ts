@@ -15,6 +15,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HomeComponent } from './components/home/home.component';
 import { DataService } from './service/service';
 import { LocalStorageService } from './service/local-storage.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,12 +28,14 @@ import { LocalStorageService } from './service/local-storage.service';
     HeroListComponent,
     PaginationComponent,
     NotFoundComponent,
-    HomeComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [DataService, LocalStorageService],
   bootstrap: [AppComponent]

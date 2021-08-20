@@ -1,13 +1,18 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { Observable, Subject } from "rxjs";
 
 @Injectable({
   providedIn: "root"
 })
 export class DataService {
-  constructor(private http: HttpClient) {}
+  comics$: Subject<any>;
 
+  constructor(private http: HttpClient) {
+    this.comics$ = new Subject();
+  }
+
+  //CLAVES  QUE SE USARAN PARA CONECTAR A LA API DE MARVEL
   options: any ={
     params:
       {
@@ -20,12 +25,29 @@ export class DataService {
       }
     }
 
+  //PETICION PARA OBTENER LOS PERSONAJES
   getCharacters():Observable<any> {
-    return this.http.get("http://gateway.marvel.com/v1/public/characters",this.options);
+    return this.http.get(`${"http://gateway.marvel.com/v1/public/characters?"}&limit=10`,this.options);
   }
 
+  //PETICION PARA OBTENER LOS COMICS RELACIONADOS AL PERSONAJES QUE SE MUESTRAN EN EL MODAL
   getComics(urlComics:string):Observable<any> {
     return this.http.get(urlComics,this.options);
   }
 
+  //PETICION PARA REALIZAR LA BUSQUEDA
+  searchCharacters(text:any): Observable<any> {
+    return this.http.get(`${"http://gateway.marvel.com/v1/public/characters?nameStartsWith="}${text}&limit=10`,this.options);
+  }
+
+  //FUNCION PARA CREAR EL OBSERVABLE QUE SE PUEDE ACCEDER DESDE CUALQUIER COMPONENTE
+  getComics$(): Observable<any> {
+    return this.comics$.asObservable();
+  }
+
+  //PETICION PARA ORDENAR DE FORMAR ASCEDENTENTE A-Z
+
+
+
+  //PETICION PARA ORDENAR DE FORMAR DESCENDENTE Z-A
 }

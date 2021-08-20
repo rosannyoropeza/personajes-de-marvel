@@ -5,3 +5,4 @@ export interface Comics {
   descriptionComics: string,
   priceComics: number
 }
+
